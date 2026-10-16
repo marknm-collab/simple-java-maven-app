@@ -75,7 +75,7 @@
   <distributionManagement>
     <repository>
         <id>nexus-releases</id>
-        <url>http://54.160.227.115:8081/repository/java-packages/</url>
+        <url>http://54.221.11.216:8081/repository/java-packages/</url>
     </repository>
 </distributionManagement>
 </project>

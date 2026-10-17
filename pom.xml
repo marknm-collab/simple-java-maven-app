@@ -72,10 +72,14 @@
       </plugin>
     </plugins>
   </build>
-  <distributionManagement>
+   <distributionManagement>
     <repository>
         <id>nexus-releases</id>
-        <url>http://54.160.227.115:8081/repository/java-packages/</url>
+        <url>http://18.212.204.187:8081/repository/java-packages/</url>
     </repository>
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <url>http://18.212.204.187:8081/repository/java-packages/</url>
+    </snapshotRepository>
 </distributionManagement>
 </project>

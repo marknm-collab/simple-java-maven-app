@@ -72,13 +72,10 @@
       </plugin>
     </plugins>
   </build>
-   </plugins>
-</build>
 <distributionManagement>
     <repository>
         <id>nexus-releases</id>
         <url>http://18.212.204.187:8081/repository/java-packages/</url>
     </repository>
 </distributionManagement>
-</project>
 </project>

@@ -74,13 +74,13 @@
   </build>
   <distributionManagement>
     <repository>
-      <id>nexus-releases</id>
-      <url>http://54.221.11.216:8081/repository/java-packages/</url>
+        <id>nexus-releases</id>
+        <url>http://18.212.204.187:8081/repository/java-packages/</url>
     </repository>
     <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://54.221.11.216:8081/repository/java-packages/</url>
+        <id>nexus-snapshots</id>
+        <url>http://18.212.204.187:8081/repository/java-packages/</url>
     </snapshotRepository>
-  </distributionManagement>
+</distributionManagement>
 </project>
   

@@ -1,14 +1,15 @@
-# Use an official OpenJDK runtime as a base image
+# Use Java 21 runtime
 FROM eclipse-temurin:21-jdk-alpine
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /usr/local/app
 
-# Copy the JAR file from the target directory into the container
-COPY target/simple-java-app-1.0.jar /usr/local/app/simple-java-app.jar
+# Copy Maven-generated JAR
+COPY target/my-app-1.0.2.jar /usr/local/app/simple-java-app.jar
 
-# Expose the application port (change if your app uses a different port)
+# Expose application port
 EXPOSE 8080
 
-# Command to run the JAR file
+# Start Java application
 CMD ["java", "-jar", "/usr/local/app/simple-java-app.jar"]
+

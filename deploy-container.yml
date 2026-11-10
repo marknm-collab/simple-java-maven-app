@@ -1,0 +1,42 @@
+---
+- name: Deploy Java application using Docker
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name:
+          - docker.io
+          - python3-docker
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull Docker image
+      community.docker.docker_image:
+        name: marknmn/project-demo
+        tag: "{{ docker_tag }}"
+        source: pull
+
+    - name: Remove old container
+      community.docker.docker_container:
+        name: java-app
+        state: absent
+
+    - name: Start Java container
+      community.docker.docker_container:
+        name: java-app
+        image: "marknmn/project-demo:{{ docker_tag }}"
+        state: started
+        restart_policy: always
+        published_ports:
+          - "8080:8080"
